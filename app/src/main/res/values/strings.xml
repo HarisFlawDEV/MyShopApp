@@ -3,4 +3,6 @@
     <string name="my_shop_app">My Shop App</string>
     <string name="content_description">content_description</string>
     <string name="title_login">Login</string>
+    <string name="password">password</string>
+    <string name="forgot_password">forgot password</string>
 </resources>

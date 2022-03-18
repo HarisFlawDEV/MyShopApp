@@ -31,6 +31,7 @@
     </FrameLayout>
 
     <com.nst.myshopapp.utils.MSPTextviewRegular
+        android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/tv_title"
@@ -38,6 +39,119 @@
         android:layout_marginTop="35dp"
         android:textColor="@color/PrimaryText"
         android:textSize="@dimen/title_textSize"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/til_email"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="16dp"
+        android:hint="Email"
+        android:textColorHint="@color/colorSecondaryTextAccent">
+
+    <com.nst.myshopapp.utils.MSPEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:id="@+id/et_email"
+        android:padding="@dimen/et_padding"
+        tools:text="abc@gmail.com"
+        android:textSize="@dimen/et_textSize"
+        android:textColor="@color/PrimaryText" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/til_password"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="16dp"
+        android:hint="@string/password"
+        android:textColorHint="@color/colorSecondaryTextAccent">
+
+        <com.nst.myshopapp.utils.MSPEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:id="@+id/et_password"
+            android:padding="@dimen/et_padding"
+            tools:text="12345678"
+            android:textSize="@dimen/et_textSize"
+            android:textColor="@color/PrimaryText" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.nst.myshopapp.utils.MSPTextviewRegular
+        android:layout_gravity="end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_forgot_password"
+        android:layout_marginEnd="16dp"
+        android:foreground="?attr/selectableItemBackground"
+        android:padding="@dimen/clickable_text_view_padding"
+        android:text="@string/forgot_password"
+        android:textColor="@color/colorSecondaryTextAccent"
+        android:textSize="@dimen/forgot_password_textSize"/>
+
+
+    <com.nst.myshopapp.utils.MSPButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_login"
+        android:layout_gravity="center"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="16dp"
+        android:foreground="?attr/selectableItemBackground"
+        android:gravity="center"
+        android:paddingBottom="@dimen/btn_padding"
+        android:textSize="@dimen/btn_textSize"
+        android:textColor="@color/white"
+        android:text="Login"/>
+
+
+    <LinearLayout
+        android:layout_marginEnd="20dp"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <com.nst.myshopapp.utils.MSPTextviewRegular
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:padding="@dimen/clickable_text_view_padding"
+            android:text="Don't have Account"
+            android:textColor="@color/colorSecondaryTextAccent"
+            android:textSize="@dimen/lbl_text_view_textSize"/>
+
+        <TextView
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:foreground="?attr/selectableItemBackground"
+            android:padding="@dimen/clickable_text_view_padding"
+            android:text="Register"
+            android:textColor="@color/colorSecondaryTextAccent"
+            android:textSize="@dimen/lbl_text_view_textSize"/>
+
+
+
+    </LinearLayout>
+
+
+
 
     
 
