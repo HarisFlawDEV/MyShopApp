@@ -13,10 +13,31 @@
         android:id="@+id/fl_header_image">
 
         <ImageView
+            android:src="@drawable/splash"
+            android:contentDescription="@string/content_description"
+            android:scaleType="fitXY"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
 
+        <ImageView
+            android:src="@drawable/ic_launcher_background"
+            android:layout_width="@dimen/auth_logo_width_size"
+            android:layout_height="@dimen/auth_header_logo_height_size"
+            android:layout_gravity="center"
+            android:contentDescription="@string/app_name"
+            android:scaleType="fitCenter"
+            app:tint="@color/white" />
+
     </FrameLayout>
+
+    <com.nst.myshopapp.utils.MSPTextviewRegular
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_title"
+        android:text="@string/title_login"
+        android:layout_marginTop="35dp"
+        android:textColor="@color/PrimaryText"
+        android:textSize="@dimen/title_textSize"/>
 
     
 
