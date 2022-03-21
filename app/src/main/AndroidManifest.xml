@@ -10,10 +10,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyShopApp">
         <activity
-            android:screenOrientation="fullSensor"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-            android:name=".activities.LoginActivity"
+            android:name=".activities.BaseActivity"
             android:exported="false" />
+        <activity
+            android:name=".activities.RegisterActivity"
+            android:exported="false"
+            android:screenOrientation="fullSensor"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".activities.LoginActivity"
+            android:exported="false"
+            android:screenOrientation="fullSensor"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".activities.SplashActivity"
             android:exported="true"

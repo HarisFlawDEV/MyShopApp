@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activities.RegisterActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_register_activity"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize">
+
+        <com.nst.myshopapp.utils.MSPTextviewRegular
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:text="CREATE AN ACCOUNT"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <com.nst.myshopapp.utils.MSPEditText
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:id="@+id/et_fname"
+        android:padding="@dimen/et_padding"
+        android:hint="First Name"
+        android:textSize="@dimen/et_textSize"
+        android:textColor="@color/PrimaryText" />
+
+    <com.nst.myshopapp.utils.MSPEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:id="@+id/et_lname"
+        android:padding="@dimen/et_padding"
+        android:hint="Last Name"
+        android:textSize="@dimen/et_textSize"
+        android:textColor="@color/PrimaryText" />
+
+    <com.nst.myshopapp.utils.MSPEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:id="@+id/et_email"
+        android:padding="@dimen/et_padding"
+        android:hint="Email ID"
+        android:textSize="@dimen/et_textSize"
+        android:textColor="@color/PrimaryText" />
+
+    <com.nst.myshopapp.utils.MSPEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:id="@+id/et_password"
+        android:padding="@dimen/et_padding"
+        android:hint="Password"
+        android:textSize="@dimen/et_textSize"
+        android:textColor="@color/PrimaryText" />
+
+    <com.nst.myshopapp.utils.MSPEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:id="@+id/et_cpassword"
+        android:padding="@dimen/et_padding"
+        android:hint="Confirm Password"
+        android:textSize="@dimen/et_textSize"
+        android:textColor="@color/PrimaryText" />
+
+    <LinearLayout
+        android:layout_marginEnd="20dp"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+    <CheckBox
+        android:id="@+id/cb_terms_and_condition"
+        android:textColor="#808080"
+        android:text="I Agree to the"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+        <com.nst.myshopapp.utils.MSPTextviewRegular
+
+            android:paddingStart="10dp"
+            android:textSize="12dp"
+            android:text="Terms &amp; Condition"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+    <com.nst.myshopapp.utils.MSPButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_register"
+        android:layout_gravity="center"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="16dp"
+        android:foreground="?attr/selectableItemBackground"
+        android:gravity="center"
+        android:paddingBottom="@dimen/btn_padding"
+        android:textSize="@dimen/btn_textSize"
+        android:textColor="@color/white"
+        android:text="Register"/>
+
+    <LinearLayout
+        android:layout_marginEnd="20dp"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <com.nst.myshopapp.utils.MSPTextviewRegular
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:padding="@dimen/clickable_text_view_padding"
+            android:text="Already have Account"
+            android:textColor="@color/colorSecondaryTextAccent"
+            android:textSize="@dimen/lbl_text_view_textSize"/>
+
+        <TextView
+            android:id="@+id/tv_tologin"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:foreground="?attr/selectableItemBackground"
+            android:padding="@dimen/clickable_text_view_padding"
+            android:text="Login"
+            android:textColor="@color/colorSecondaryTextAccent"
+            android:textSize="@dimen/lbl_text_view_textSize"/>
+
+
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>

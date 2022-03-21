@@ -13,22 +13,23 @@
         android:id="@+id/fl_header_image">
 
         <ImageView
-            android:src="@drawable/splash"
+            android:src="@drawable/login_top_bg"
             android:contentDescription="@string/content_description"
             android:scaleType="fitXY"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
 
         <ImageView
-            android:src="@drawable/ic_launcher_background"
+            android:src="@drawable/logo"
             android:layout_width="@dimen/auth_logo_width_size"
             android:layout_height="@dimen/auth_header_logo_height_size"
             android:layout_gravity="center"
             android:contentDescription="@string/app_name"
-            android:scaleType="fitCenter"
-            app:tint="@color/white" />
+            android:scaleType="fitCenter" />
 
     </FrameLayout>
+
+
 
     <com.nst.myshopapp.utils.MSPTextviewRegular
         android:layout_gravity="center"
@@ -40,52 +41,28 @@
         android:textColor="@color/PrimaryText"
         android:textSize="@dimen/title_textSize"/>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/til_email"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="35dp"
-        android:layout_marginEnd="16dp"
-        android:hint="Email"
-        android:textColorHint="@color/colorSecondaryTextAccent">
 
     <com.nst.myshopapp.utils.MSPEditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="text"
+        android:inputType="textEmailAddress"
         android:id="@+id/et_email"
         android:padding="@dimen/et_padding"
         tools:text="abc@gmail.com"
         android:textSize="@dimen/et_textSize"
         android:textColor="@color/PrimaryText" />
 
-    </com.google.android.material.textfield.TextInputLayout>
-
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/til_password"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="16dp"
-        android:hint="@string/password"
-        android:textColorHint="@color/colorSecondaryTextAccent">
 
         <com.nst.myshopapp.utils.MSPEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="text"
+            android:inputType="textPassword"
             android:id="@+id/et_password"
             android:padding="@dimen/et_padding"
             tools:text="12345678"
             android:textSize="@dimen/et_textSize"
             android:textColor="@color/PrimaryText" />
 
-    </com.google.android.material.textfield.TextInputLayout>
 
 
     <com.nst.myshopapp.utils.MSPTextviewRegular
@@ -136,6 +113,7 @@
             android:textSize="@dimen/lbl_text_view_textSize"/>
 
         <TextView
+            android:id="@+id/tv_toregister"
             android:textStyle="bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

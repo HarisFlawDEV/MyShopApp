@@ -7,16 +7,20 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
+    tools:viewBindingIgnore="true"
     android:background="@drawable/splash"
     tools:context=".activities.SplashActivity">
 
-    <com.nst.myshopapp.utils.MSPTextviewRegular
 
+<TextView
         android:textSize="@dimen/sp_title_text_size"
         android:textColor="@color/white"
         android:id="@+id/tv_app_name"
         android:text="@string/my_shop_app"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+     android:layout_height="wrap_content">
+
+</TextView>
+
 
 </LinearLayout>

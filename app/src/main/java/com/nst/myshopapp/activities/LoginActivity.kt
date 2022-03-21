@@ -8,11 +8,19 @@ import android.os.Handler
 import android.view.WindowInsets
 import android.view.WindowManager
 import com.nst.myshopapp.R
+import com.nst.myshopapp.databinding.ActivityLoginBinding
+import com.nst.myshopapp.databinding.ActivityRegisterBinding
 
 class LoginActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityLoginBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login)
+
+        binding = ActivityLoginBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
 
 
         @Suppress("DEPRECATION")
@@ -25,6 +33,13 @@ class LoginActivity : AppCompatActivity() {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN
             )
         }
+        binding.tvToregister.setOnClickListener {
+            startActivity(Intent(this@LoginActivity, RegisterActivity::class.java))
+
+
+        }
 
     }
+
+
 }

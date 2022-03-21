@@ -13,7 +13,7 @@ class MSPEditText(context: Context , attributeSet: AttributeSet) : AppCompatEdit
 
     private fun applyfont() {
 
-        val typeface : Typeface = Typeface.createFromAsset(context.assets,"AltonaSans-Regular.tff")
+        val typeface : Typeface = Typeface.createFromAsset(context.assets,"fonts/AltonaSans-Regular.ttf")
         setTypeface(typeface)
         //      tv_app_name.typeface = typeface
 
