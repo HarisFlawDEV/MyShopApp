@@ -78,6 +78,7 @@ class RegisterActivity : BaseActivity() {
             }
 
             TextUtils.isEmpty(binding.etEmail.text.toString().trim { it <= ' '}) -> {
+                Log.d("email",binding.etEmail.text.toString().trim())
                 showErrorSnackBar(resources.getString(R.string.err_msg_enter_email),true)
                 false
             }
@@ -110,8 +111,8 @@ class RegisterActivity : BaseActivity() {
     private fun registerUser() {
         if (validateRegisterDetails())
         {
-            val email : String = binding.etEmail.toString().trim() { it <= ' '}
-            val password : String = binding.etPassword.toString().trim() { it <= ' '}
+            val email : String = binding.etEmail.text.toString().trim()  { it <= ' '}
+            val password : String = binding.etPassword.text.toString().trim() { it <= ' '}
 
             //Create an instance and create a register a user with email and password
             FirebaseAuth.getInstance().createUserWithEmailAndPassword(email,password)
@@ -127,7 +128,7 @@ class RegisterActivity : BaseActivity() {
                         )
                         }
                         else {
-                            Log.d("register","Failed")
+                            Log.d("register", "Failed$email")
 
                             showErrorSnackBar(task.exception!!.message.toString(),true)
                         }
