@@ -6,8 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activities.UserProfileActivity"
-    android:orientation="vertical"
-    >
+    android:orientation="vertical">
 
     <androidx.appcompat.widget.Toolbar
         android:background="@drawable/login_top_bg"
@@ -74,6 +73,46 @@
         android:textSize="@dimen/et_textSize"
         android:textColor="@color/PrimaryText" />
 
+    <RadioGroup
+        android:id="@+id/rg_gender"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/profile_radio_button_height"
+        android:layout_marginTop="25dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="16dp"
+        android:orientation="horizontal"
+       >
+        <com.nst.myshopapp.utils.MSPRadioButton
+            android:layout_weight="1"
+            android:background="@drawable/drawable_gender_tab_selector"
+            android:layout_marginEnd="@dimen/gender_radio_button_marginStartEnd"
+            android:id="@+id/rb_male"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:checked="true"
+            android:button="@null"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textColor="@drawable/drawable_gender_tab_text_color_selector"
+            android:text="Male"
+            />
+
+        <com.nst.myshopapp.utils.MSPRadioButton
+            android:layout_weight="1"
+            android:background="@drawable/drawable_gender_tab_selector"
+            android:layout_marginEnd="@dimen/gender_radio_button_marginStartEnd"
+            android:id="@+id/rb_female"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:button="@null"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textColor="@drawable/drawable_gender_tab_text_color_selector"
+            android:text="Female"
+            />
+
+    </RadioGroup>
+
 
     <com.nst.myshopapp.utils.MSPButton
         android:layout_width="match_parent"
@@ -86,6 +125,7 @@
         android:background="@drawable/button_background"
         android:foreground="?attr/selectableItemBackground"
         android:gravity="center"
+        android:paddingTop="@dimen/btn_padding"
         android:paddingBottom="@dimen/btn_padding"
         android:textSize="@dimen/btn_textSize"
         android:textColor="@color/white"

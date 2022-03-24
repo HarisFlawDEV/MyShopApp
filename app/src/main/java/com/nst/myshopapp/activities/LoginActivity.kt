@@ -18,6 +18,7 @@ import com.nst.myshopapp.databinding.ActivityLoginBinding
 import com.nst.myshopapp.databinding.ActivityRegisterBinding
 import com.nst.myshopapp.firestore.FirestoreClass
 import com.nst.myshopapp.model.User
+import com.nst.myshopapp.utils.Constants
 
 class LoginActivity : BaseActivity(), View.OnClickListener {
 
@@ -130,7 +131,15 @@ class LoginActivity : BaseActivity(), View.OnClickListener {
         hideProgressDialog()
 
         //get details here
-        startActivity(Intent(this@LoginActivity,MainActivity::class.java))
+
+        if(user.profileCompleted == 0)
+        {
+            val intent = Intent(this@LoginActivity ,UserProfileActivity::class.java)
+            intent.putExtra(Constants.EXTRA_USER_DETAILS,user)
+            startActivity(intent)
+        }else {
+            startActivity(Intent(this@LoginActivity ,MainActivity::class.java))
+        }
         finish()
     }
 

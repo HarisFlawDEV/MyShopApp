@@ -11,6 +11,8 @@
         android:theme="@style/Theme.MyShopApp">
         <activity
             android:name=".activities.UserProfileActivity"
+            android:screenOrientation="fullSensor"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:exported="false" />
         <activity
             android:name=".activities.ForgotActivity"
