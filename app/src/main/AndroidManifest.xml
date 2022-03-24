@@ -10,6 +10,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyShopApp">
         <activity
+            android:name=".activities.UserProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.ForgotActivity"
+            android:exported="false"
+            android:screenOrientation="fullSensor"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
             android:name=".activities.BaseActivity"
             android:exported="false" />
         <activity

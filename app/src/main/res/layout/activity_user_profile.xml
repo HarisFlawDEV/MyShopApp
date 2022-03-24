@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.UserProfileActivity"
+    android:orientation="vertical"
+    >
+
+    <androidx.appcompat.widget.Toolbar
+        android:background="@drawable/login_top_bg"
+        android:id="@+id/toolbar_user_profile_activity"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize">
+
+        <com.nst.myshopapp.utils.MSPTextViewBold
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:textSize="20dp"
+            app:textAllCaps="true"
+            android:textColor="@color/white"
+            android:text="Complete Profile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </androidx.appcompat.widget.Toolbar>
+
+    <ImageView
+        android:src="@drawable/user"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
+        android:layout_width="250dp"
+        android:layout_height="250dp"/>
+
+    <com.nst.myshopapp.utils.MSPEditText
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:id="@+id/et_fname"
+        android:padding="@dimen/et_padding"
+        android:hint="First Name"
+        android:textSize="@dimen/et_textSize"
+        android:textColor="@color/PrimaryText" />
+
+    <com.nst.myshopapp.utils.MSPEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:id="@+id/et_lname"
+        android:padding="@dimen/et_padding"
+        android:hint="Last Name"
+        android:textSize="@dimen/et_textSize"
+        android:textColor="@color/PrimaryText" />
+
+    <com.nst.myshopapp.utils.MSPEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:id="@+id/et_email"
+        android:padding="@dimen/et_padding"
+        android:hint="Email ID"
+        android:textSize="@dimen/et_textSize"
+        android:textColor="@color/PrimaryText" />
+
+    <com.nst.myshopapp.utils.MSPEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPhonetic"
+        android:id="@+id/et_mobileno"
+        android:padding="@dimen/et_padding"
+        android:hint="Mobile Number"
+        android:textSize="@dimen/et_textSize"
+        android:textColor="@color/PrimaryText" />
+
+    <
+
+    <com.nst.myshopapp.utils.MSPButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_save"
+        android:layout_gravity="center"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/button_background"
+        android:foreground="?attr/selectableItemBackground"
+        android:gravity="center"
+        android:paddingBottom="@dimen/btn_padding"
+        android:textSize="@dimen/btn_textSize"
+        android:textColor="@color/white"
+        android:text="Save"/>
+
+
+
+
+
+
+
+
+</LinearLayout>

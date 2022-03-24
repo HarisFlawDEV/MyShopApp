@@ -5,7 +5,7 @@ import android.graphics.Typeface
 import android.util.AttributeSet
 import androidx.appcompat.widget.AppCompatTextView
 
-class MSPTextviewRegular(context : Context , attributes: AttributeSet) : AppCompatTextView(context,attributes) {
+class MSPTextViewBold(context : Context, attributes: AttributeSet) : AppCompatTextView(context,attributes) {
 
     init {
         applyfont()
@@ -13,9 +13,9 @@ class MSPTextviewRegular(context : Context , attributes: AttributeSet) : AppComp
 
     private fun applyfont() {
 
-        val typeface : Typeface = Typeface.createFromAsset(context.assets,"fonts/AltonaSans-Regular.ttf")
+        val typeface : Typeface = Typeface.createFromAsset(context.assets,"fonts/Rubik-Medium.ttf")
         setTypeface(typeface)
-  //      tv_app_name.typeface = typeface
+        //      tv_app_name.typeface = typeface
 
     }
 

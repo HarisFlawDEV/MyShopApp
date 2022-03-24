@@ -15,4 +15,15 @@
     <string name="err_msg_agree_terms_and_condition">Please agree terms and condition</string>
     <string name="registery_successfull">Thanks for registering!</string>
 
+    <string name="please_wait">Please Wait&#8230;</string>
+    <string name="login_successfull">Login Successful !</string>
+    <string name="tv_forgot_pass">Forgot Password</string>
+
+    <string name="tv_details_fp">Enter your username and e-mail address we\'ll send you a email to reset your password;</string>
+
+
+    <string name="btn_lbl_submit">Submit</string>
+    <string name="email_sent_success">Link successfully sent to email</string>
+    <string name="registery_succes">You are registered successfully.</string>
+
 </resources>

@@ -8,6 +8,7 @@ import android.text.TextUtils
 import android.util.Log
 import android.view.WindowInsets
 import android.view.WindowManager
+import android.widget.Toast
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
@@ -16,6 +17,8 @@ import com.google.firebase.ktx.Firebase
 import com.nst.myshopapp.R
 import com.nst.myshopapp.databinding.ActivityMainBinding
 import com.nst.myshopapp.databinding.ActivityRegisterBinding
+import com.nst.myshopapp.firestore.FirestoreClass
+import com.nst.myshopapp.model.User
 
 class RegisterActivity : BaseActivity() {
 
@@ -41,8 +44,7 @@ class RegisterActivity : BaseActivity() {
         setupActionBar()
 
         binding.tvTologin.setOnClickListener {
-            startActivity(Intent(this@RegisterActivity, RegisterActivity::class.java))
-
+           onBackPressed()
 
         }
         binding.btnRegister.setOnClickListener {
@@ -111,6 +113,9 @@ class RegisterActivity : BaseActivity() {
     private fun registerUser() {
         if (validateRegisterDetails())
         {
+
+            showProgressDialog(resources.getString(R.string.please_wait))
+
             val email : String = binding.etEmail.text.toString().trim()  { it <= ' '}
             val password : String = binding.etPassword.text.toString().trim() { it <= ' '}
 
@@ -118,23 +123,43 @@ class RegisterActivity : BaseActivity() {
             FirebaseAuth.getInstance().createUserWithEmailAndPassword(email,password)
                 .addOnCompleteListener(
                     OnCompleteListener<AuthResult> { task ->
+
+
                         if (task.isSuccessful) {
                             Log.d("register","Success")
                             val firebaseUser : FirebaseUser = task.result!!.user!!
 
-                        showErrorSnackBar(
+                            val user = User(firebaseUser.uid,
+                                firstName = binding.etFname.text.toString().trim { it <= ' ' },
+                                lastName =  binding.etLname.text.toString().trim { it <= ' ' },
+                                email = binding.etFname.text.toString().trim { it <= ' ' }
+                            )
+                            FirestoreClass().registerUser(this@RegisterActivity,user)
+
+                     /*   showErrorSnackBar(
                             "You are registered successfully, Your user id is " +
                                     firebaseUser.uid,false
-                        )
+                        )*/
+                           // FirebaseAuth.getInstance().signOut()
+                       //     finish()
                         }
                         else {
                             Log.d("register", "Failed$email")
 
+                            hideProgressDialog()
                             showErrorSnackBar(task.exception!!.message.toString(),true)
                         }
 
                     }
                 )
         }
+    }
+    fun userRegisteredSuccess(){
+        //Hide the progress dialog
+        hideProgressDialog()
+
+        Toast.makeText(this@RegisterActivity,
+        resources.getString(R.string.registery_succes),Toast.LENGTH_SHORT).show()
+
     }
 }

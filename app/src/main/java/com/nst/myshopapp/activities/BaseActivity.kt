@@ -1,6 +1,7 @@
 package com.nst.myshopapp.activities
 
 import android.app.Dialog
+import android.app.ProgressDialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Message
@@ -10,11 +11,13 @@ import com.google.android.material.snackbar.Snackbar
 import com.nst.myshopapp.R
 import com.nst.myshopapp.databinding.ActivityBaseBinding
 import com.nst.myshopapp.databinding.ActivityRegisterBinding
+import com.nst.myshopapp.databinding.DialogProgressBinding
 
 open class BaseActivity : AppCompatActivity() {
 
     private lateinit var mProgressDialog: Dialog
 
+    private lateinit var binding: DialogProgressBinding
 
 
     fun showErrorSnackBar(message : String , errorMessage: Boolean){
@@ -43,11 +46,25 @@ open class BaseActivity : AppCompatActivity() {
     }
     fun showProgressDialog(text : String)
     {
+
+        binding = DialogProgressBinding.inflate(layoutInflater)
+        val view = binding.root
+
         mProgressDialog = Dialog(this)
 
-        mProgressDialog.setContentView(R.layout.dialog_progress)
+        mProgressDialog.setContentView(view)
 
-        mProgressDialog.findViewById<TextView>(R.id.tv_progress_text
-        )
+        binding.tvProgressText.text = text
+
+        mProgressDialog.setCancelable(false)
+
+        mProgressDialog.setCanceledOnTouchOutside(false)
+
+        mProgressDialog.show()
+
+    }
+    fun hideProgressDialog()
+    {
+        mProgressDialog.dismiss()
     }
 }
