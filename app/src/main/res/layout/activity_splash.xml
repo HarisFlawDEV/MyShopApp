@@ -9,7 +9,7 @@
     android:gravity="center"
     tools:viewBindingIgnore="true"
     android:background="@drawable/splash"
-    tools:context=".activities.SplashActivity">
+    tools:context=".ui.activities.SplashActivity">
 
 
 <TextView

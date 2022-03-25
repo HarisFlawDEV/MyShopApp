@@ -1,11 +1,13 @@
-package com.nst.myshopapp.activities
+package com.nst.myshopapp.ui.activities
 
 import android.app.Dialog
 import android.app.ProgressDialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import android.os.Message
 import android.widget.TextView
+import android.widget.Toast
 import androidx.core.content.ContextCompat
 import com.google.android.material.snackbar.Snackbar
 import com.nst.myshopapp.R
@@ -19,6 +21,7 @@ open class BaseActivity : AppCompatActivity() {
 
     private lateinit var binding: DialogProgressBinding
 
+    private var doubleBackToExitPressedOnce = false
 
     fun showErrorSnackBar(message : String , errorMessage: Boolean){
 
@@ -67,4 +70,22 @@ open class BaseActivity : AppCompatActivity() {
     {
         mProgressDialog.dismiss()
     }
+
+    fun doubleBackToExit(){
+
+        if (doubleBackToExitPressedOnce){
+            super.onBackPressed()
+            return
+        }
+
+        this.doubleBackToExitPressedOnce = true
+
+        Toast.makeText(this,
+        resources.getString(R.string.please_click_back_again_to_exit),Toast.LENGTH_SHORT).show()
+
+        @Suppress("DEPRECATION")
+        Handler().postDelayed({ doubleBackToExitPressedOnce = false },2000)
+    }
+
+
 }

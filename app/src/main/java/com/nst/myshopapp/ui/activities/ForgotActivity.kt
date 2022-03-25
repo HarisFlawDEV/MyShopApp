@@ -1,4 +1,4 @@
-package com.nst.myshopapp.activities
+package com.nst.myshopapp.ui.activities
 
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity

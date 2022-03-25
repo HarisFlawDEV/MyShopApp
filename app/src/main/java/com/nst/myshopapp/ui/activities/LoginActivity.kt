@@ -1,4 +1,4 @@
-package com.nst.myshopapp.activities
+package com.nst.myshopapp.ui.activities
 
 import android.content.Intent
 import android.os.Build
@@ -134,11 +134,11 @@ class LoginActivity : BaseActivity(), View.OnClickListener {
 
         if(user.profileCompleted == 0)
         {
-            val intent = Intent(this@LoginActivity ,UserProfileActivity::class.java)
+            val intent = Intent(this@LoginActivity , UserProfileActivity::class.java)
             intent.putExtra(Constants.EXTRA_USER_DETAILS,user)
             startActivity(intent)
         }else {
-            startActivity(Intent(this@LoginActivity ,MainActivity::class.java))
+            startActivity(Intent(this@LoginActivity , DashBoardActivity::class.java))
         }
         finish()
     }
