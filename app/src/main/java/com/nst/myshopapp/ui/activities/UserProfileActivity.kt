@@ -38,25 +38,61 @@ class UserProfileActivity : BaseActivity(), View.OnClickListener {
         val view = binding.root
         setContentView(view)
 
+        setupActionBar(view)
+
         if (intent.hasExtra(Constants.EXTRA_USER_DETAILS)) {
             //Get the user details from intent as a ParcelableExtra
             muserDetails = intent.getParcelableExtra(Constants.EXTRA_USER_DETAILS)!!
         }
-
-        binding.etFname.isEnabled = false
         binding.etFname.setText(muserDetails.firstName)
-
-        binding.etLname.isEnabled = false
         binding.etLname.setText(muserDetails.lastName)
-
         binding.etEmail.isEnabled = false
+
         binding.etEmail.setText(muserDetails.email)
+
+
+        if (muserDetails.profileCompleted == 0){
+            binding.tvTitle.text = resources.getString(R.string.title_complete_profle)
+
+            binding.etFname.isEnabled = false
+            binding.etLname.isEnabled = false
+
+
+        }
+        else {
+            setupActionBar(view)
+            binding.tvTitle.text = resources.getString(R.string.title_edit_profle)
+            GlideLoader(this@UserProfileActivity).loadUserPicture(muserDetails.image,binding.ivUserPhoto)
+            if (muserDetails.mobile != 0L){
+                binding.etMobileno.setText(muserDetails.mobile.toString())
+            }
+            if (muserDetails.gender == Constants.MALE) {
+                binding.rbMale.isChecked = true
+            }
+            else {
+                binding.rbFemale .isChecked = true
+            }
+
+        }
+
 
         binding.ivUserPhoto.setOnClickListener(this@UserProfileActivity)
 
         binding.btnSave.setOnClickListener(this@UserProfileActivity)
 
 
+
+    }
+    private fun setupActionBar(v : View) {
+        setSupportActionBar(v.findViewById(R.id.toolbar_user_profile_activity))
+
+        val actionBar = supportActionBar
+        if (actionBar != null)
+        {
+            actionBar.setDisplayHomeAsUpEnabled(true)
+            actionBar.setHomeAsUpIndicator(R.drawable.left)
+        }
+        binding.toolbarUserProfileActivity.setNavigationOnClickListener { onBackPressed() }
 
     }
 
@@ -127,6 +163,19 @@ class UserProfileActivity : BaseActivity(), View.OnClickListener {
     private fun updateUserProfileDetails(){
         val userHashMap = HashMap<String,Any>()
 
+        val firstName = binding.etFname.text.toString().trim { it <= ' ' }
+        if (firstName != muserDetails.firstName)
+        {
+            userHashMap[Constants.FIRST_NAME] = firstName
+        }
+
+        val lastName = binding.etLname.text.toString().trim { it <= ' ' }
+        if (lastName != muserDetails.lastName)
+        {
+            userHashMap[Constants.LAST_NAME] = lastName
+        }
+
+
         val mobileNumber = binding.etMobileno.text.toString().trim { it <= ' ' }
 
         val gender = setOnCheckedChangeListener()
@@ -136,9 +185,14 @@ class UserProfileActivity : BaseActivity(), View.OnClickListener {
             userHashMap[Constants.IMAGE] = mUserProfileImageURL
         }
 
-        if (mobileNumber.isNotEmpty()){
+        if (mobileNumber.isNotEmpty() && mobileNumber != muserDetails.mobile.toString()){
             userHashMap[Constants.MOBILE] = mobileNumber.toLong()
         }
+
+        if (gender.isNotEmpty() && gender != muserDetails.gender){
+            userHashMap[Constants.GENDER] = gender
+        }
+
         userHashMap[Constants.GENDER] = gender
 
         userHashMap[Constants.COMPLETE_PROFILE] = 1
@@ -159,7 +213,7 @@ class UserProfileActivity : BaseActivity(), View.OnClickListener {
         resources.getString(R.string.msg_profile_update_success),
         Toast.LENGTH_SHORT).show()
 
-        startActivity(Intent(this@UserProfileActivity, MainActivity::class.java))
+        startActivity(Intent(this@UserProfileActivity, DashBoardActivity::class.java))
         finish()
     }
 

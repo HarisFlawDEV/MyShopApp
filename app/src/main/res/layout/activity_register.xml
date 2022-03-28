@@ -84,12 +84,12 @@
         android:gravity="center_vertical"
         android:orientation="horizontal">
 
-    <CheckBox
-        android:id="@+id/cb_terms_and_condition"
-        android:textColor="#808080"
-        android:text="I Agree to the"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        <CheckBox
+            android:id="@+id/cb_terms_and_condition"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="I Agree to the"
+            android:textColor="#546E7A" />
 
         <com.nst.myshopapp.utils.MSPTextviewRegular
 

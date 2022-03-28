@@ -15,6 +15,7 @@ import com.nst.myshopapp.ui.activities.LoginActivity
 import com.nst.myshopapp.ui.activities.RegisterActivity
 import com.nst.myshopapp.ui.activities.UserProfileActivity
 import com.nst.myshopapp.model.User
+import com.nst.myshopapp.ui.activities.SettingsActivity
 import com.nst.myshopapp.utils.Constants
 
 class FirestoreClass {
@@ -89,11 +90,17 @@ class FirestoreClass {
                     is LoginActivity -> {
                         activity.userLoggedInSuccess(user)
                     }
+                    is SettingsActivity -> {
+                        activity.userDetailsSuccess(user)
+                    }
                 }
             }
             .addOnFailureListener { e ->
                 when(activity){
                     is LoginActivity -> {
+                        activity.hideProgressDialog()
+                    }
+                    is SettingsActivity -> {
                         activity.hideProgressDialog()
                     }
                 }
